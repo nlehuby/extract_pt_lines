@@ -29,6 +29,10 @@ jobs:
         export PATH=$PATH:$PWD/
         xsv --version
         osm_transit_extractor --version
+        sudo add-apt-repository --yes ppa:ubuntugis/ppa
+        sudo apt-get --quiet update
+        sudo apt-get install --yes libgdal-dev gdal-bin
+        ogr2ogr --version
         ./extract_lines.sh
         cat output/lines.csv | xsv count
 
