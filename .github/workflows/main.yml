@@ -22,19 +22,15 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: install and extract
       run: |
         ./install.sh
         export PATH=$PATH:$PWD/
         xsv --version
         osm_transit_extractor --version
         ./extract_lines.sh
-        cat output/lines_from_osm.csv | xsv count
+        cat output/lines.csv | xsv count
 
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
