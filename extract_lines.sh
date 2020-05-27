@@ -2,8 +2,8 @@
 
 set -ev
 
-#wget http://download.geofabrik.de/europe/france-latest.osm.pbf --no-verbose --output-document=data.osm.pbf 2>&1
-wget http://download.geofabrik.de/europe/monaco-latest.osm.pbf --no-verbose --output-document=data.osm.pbf 2>&1
+wget http://download.geofabrik.de/europe/france-latest.osm.pbf --no-verbose --output-document=data.osm.pbf 2>&1
+#wget http://download.geofabrik.de/europe/monaco-latest.osm.pbf --no-verbose --output-document=data.osm.pbf 2>&1
 
 osm_transit_extractor -i data.osm.pbf
 
